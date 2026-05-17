@@ -28,3 +28,11 @@ patches:
           limits:
             cpu: "500m"
             memory: "512Mi"
+
+  - target:
+      kind: Ingress
+      name: simple-app
+    patch: |-
+      - op: replace
+        path: /spec/rules/0/host
+        value: simple-app-prod.local
